@@ -18,6 +18,7 @@ app.use('/users',authToken,userRouter)
 const authRouter=require('./routes/auth');
 app.use('/',authRouter)
 
-app.listen(9000,()=>{
+const PORT=process.env.PORT||9000
+app.listen(PORT,()=>{
     console.log('server started')
 })
