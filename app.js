@@ -4,6 +4,10 @@ const url ="mongodb+srv://rahul:Rahul%405500@cluster0.78by4.mongodb.net/USERS_DB
 const app = express(); //start the express server
 const authToken = require("./middleware/authToken");
 
+var cors = require('cors')
+
+app.use(cors()) // Use this after the variable declaration
+
 mongoose
   .connect(url, {
     useNewUrlParser: true,
