@@ -1,25 +1,25 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const url ="mongodb+srv://rahul:Rahul%405500@cluster0.78by4.mongodb.net/USERS_DB?retryWrites=true&w=majority";
+const dotenv = require("dotenv").config();
+const url = process.env.MONGO_URI;
 const app = express(); //start the express server
 const authToken = require("./middleware/authToken");
 
-var cors = require('cors')
+var cors = require("cors");
 
-app.use(cors()) // Use this after the variable declaration
+app.use(cors()); // Use this after the variable declaration
 
 mongoose
   .connect(url, {
     useNewUrlParser: true,
-   
+
     useUnifiedTopology: true,
-    
   })
   .then(() => {
     console.log("connected..");
   })
   .catch((err) => {
-    console.log("error in connection",err);
+    console.log("error in connection", err);
   }); //connext to db
 
 // to get handle of db
