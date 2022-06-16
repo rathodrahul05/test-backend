@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
-const url = process.env.MONGO_URI;
+// const dotenv = require("dotenv").config();
+const url = "mongodb+srv://rahul:Rahul%405500@cluster0.78by4.mongodb.net/USERS_DB?retryWrites=true&w=majority";
 const app = express(); //start the express server
 const authToken = require("./middleware/authToken");
 
