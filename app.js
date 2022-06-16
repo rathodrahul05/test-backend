@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
-const url = process.env.MONGO_URI;
+const url = process.env.URL;
 const app = express(); //start the express server
 const authToken = require("./middleware/authToken");
 
