@@ -2,6 +2,7 @@ const authService = require("../services/authService");
 const tokenService = require("../services/tokenService");
 
 const login = async (req, res) => {
+  console.log('hi')
   console.log(req.body);
   const { email, password } = req.body;
   console.log(email);
@@ -15,6 +16,7 @@ const login = async (req, res) => {
 };
 
 const refreshTokens = async (req, res) => {
+  console.log('hi')
   const tokens = await authService.refreshAuth(req.body.refreshToken);
   res.send({ ...tokens });
 };

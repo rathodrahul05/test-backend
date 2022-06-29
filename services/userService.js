@@ -10,7 +10,9 @@ const getAllUsers = async () => {
 const createUser = async (body) => {
   const user = new User({
     name: body.name,
-    Technology: body.Technology,
+    email:body.email,
+    phone:body.phone,
+    technology: body.technology,
     isSubscribed: body.isSubscribed,
   });
   const user1 = await user.save();
